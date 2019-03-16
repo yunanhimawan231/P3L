@@ -59,7 +59,7 @@ class Home extends CI_Controller {
     	}
     	else
     	{
-        	echo $this->session->set_flashdata('msg','Username or Password is Wrong');
+			echo $this->session->set_flashdata('msg','Username or Password is Wrong');
         	redirect('Home');
     	}
   	}

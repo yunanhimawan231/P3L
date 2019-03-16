@@ -12,7 +12,7 @@
                 <div class="x_panel">
                   <div class="x_content">
 
-                    <form class="form-horizontal form-label-left" action="<?php echo site_url('Supplier/insert');?>" method="post">
+                    <form class="form-horizontal form-label-left" action="<?php echo base_url('Supplier/insert');?>" method="post">
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">ID Supplier</label>
                         <div class="col-md-2 col-sm-6 col-xs-12">
@@ -58,6 +58,12 @@
                         </div>
                       </div>
                     </form>
+
+                    <?php if ($this->session->flashdata('success')): ?>
+                      <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                      </div>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
