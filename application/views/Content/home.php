@@ -1,4 +1,4 @@
-		<div class="right_col" role="main">
+<div class="right_col" role="main">
 
 			<div class="page-title">
               <div class="title_left">
@@ -316,4 +316,4 @@ $(document).ready(function(){
 	$("#TabelTransaksi tbody").find('input[type=text],textarea,select').filter(':visible:first').focus();
 });
 
-</script>
+</script> 
