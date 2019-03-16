@@ -13,7 +13,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2><?php echo $this->session->userdata('USERNAME');?></h2>
+                <h2><?php echo $this->session->userdata('NAMA_PEGAWAI');?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -65,7 +65,7 @@
 
                   <?php endif;?>
 
-                  <?php if($this->session->userdata('NAMA_ROLE')==='customer service'):?>
+                  <?php if($this->session->userdata('NAMA_ROLE')==='Customer Service'):?>
 
                     <li><a href="<?php echo site_url('Page/dashboard'); ?>"><i class="fa fa-home"></i> Dashboard</a></li>
 
