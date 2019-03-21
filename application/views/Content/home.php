@@ -1,5 +1,4 @@
 <div class="right_col" role="main">
-<<<<<<< HEAD
 
 			<div class="page-title">
               <div class="title_left">
@@ -318,7 +317,3 @@ $(document).ready(function(){
 });
 
 </script> 
-=======
-	
-</div>
->>>>>>> 25e109b7e15179444c20256490e74ff3bbfdb8bc
