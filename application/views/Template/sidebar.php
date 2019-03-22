@@ -39,8 +39,9 @@
                       
                       <li><a><i class="fa fa-edit"></i> Master <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a>Input Data Pegawai</a></li>
+                          <li><a href="<?php echo site_url('Page/input_jasa_service');?>">Input Data Jasa Service</a></li>
                           <li><a href="<?php echo site_url('Page/input_supplier'); ?>">Input Data Supplier</a></li>
+                          <li><a href="<?php echo site_url('Page/input_customer'); ?>">Input Customer</a></li>
                         </ul>
                       </li>
                       
