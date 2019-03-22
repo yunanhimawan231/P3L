@@ -31,7 +31,7 @@ class Home extends CI_Controller {
     	if($validate_user->num_rows() > 0)
 	    {
 	        $data_user  = $validate_user->row_array();
-			$usernmae  = $data_user['USERNAME'];
+			$username  = $data_user['USERNAME'];
 			$nama_pegawai = $data_user['NAMA_PEGAWAI'];
 			$id_role = $data_user['ID_ROLE'];
 
