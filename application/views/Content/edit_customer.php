@@ -12,35 +12,35 @@
                 <div class="x_panel">
                   <div class="x_content">
 
-                    <form class="form-horizontal form-label-left" action="<?php echo site_url('Customer/insert');?>" method="post">
+                    <form class="form-horizontal form-label-left" action="<?php echo site_url('Customer/edit');?>" method="post">
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">ID Customer</label>
                         <div class="col-md-2 col-sm-6 col-xs-12">
-                          <input type="text" id="id_customer" class="form-control col-md-7 col-xs-12" name="ID_CUSTOMER">
+                          <input type="text" id="id_customer" class="form-control col-md-7 col-xs-12" name="ID_CUSTOMER" value="<?php echo $customer_edit->ID_CUSTOMER ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Customer</label>
                         <div class="col-md-4 col-sm-6 col-xs-12">
-                          <input type="text" id="nama_customer" class="form-control col-md-7 col-xs-12" name="NAMA_CUSTOMER">
+                          <input type="text" id="nama_customer" class="form-control col-md-7 col-xs-12" name="NAMA_CUSTOMER" value="<?php echo $customer_edit->NAMA_CUSTOMER ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Alamat Customer</label>
                         <div class="col-md-4 col-sm-6 col-xs-12">
-                          <textarea id="alamat_customer" class="form-control" name="ALAMAT_CUSTOMER"></textarea>
+                          <textarea id="alamat_customer" class="form-control" name="ALAMAT_CUSTOMER"><?php echo $customer_edit->ALAMAT_CUSTOMER ?></textarea>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Telepon Customer</label>
                         <div class="col-md-4 col-sm-6 col-xs-12">
-                          <input type="text" id="telepon_customer" class="form-control col-md-7 col-xs-12" name="TELEPON_CUSTOMER">
+                          <input type="text" id="telepon_customer" class="form-control col-md-7 col-xs-12" name="TELEPON_CUSTOMER" value="<?php echo $customer_edit->TELEPON_CUSTOMER ?>">
                         </div>
                       </div>
                       <div class="ln_solid"></div>     
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="reset">Reset</button>
+                          <button class="btn btn-primary" action="<?php echo site_url('Page/input_customer'); ?>">Batal</button>
                           <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>

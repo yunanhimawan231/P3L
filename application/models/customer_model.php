@@ -9,8 +9,8 @@
 		public $nama_customer;
 		public $alamat_customer;
 		public $telepon_customer;
+		
 		public function rules(){
-
 			return [
 				[
 					'field' => 'ID_CUSTOMER',
@@ -61,7 +61,23 @@
 
 			 $this->db->insert($this->_table, $this);
 
+		}
 
+		public function update()
+		{
+			$post = $this->input->post();
+			
+			$this->id_customer = $post["ID_CUSTOMER"];
+			$this->nama_customer = $post["NAMA_CUSTOMER"];
+			$this->alamat_customer = $post["ALAMAT_CUSTOMER"];
+			$this->telepon_customer = $post["TELEPON_CUSTOMER"];
+
+			$this->db->update($this->_table, $this, array('ID_CUSTOMER' => $post['ID_CUSTOMER']));
+		}
+
+		public function delete($id)
+		{
+			return $this->db->delete($this->_table, array("ID_CUSTOMER" => $id));
 		}
 
 

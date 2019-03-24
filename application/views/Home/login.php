@@ -29,6 +29,13 @@
           <section class="login_content">
             <form action="<?php echo site_url('Home/auth');?>" method="post">
               <h1>P3L</h1>
+              
+              <!-- <?php if($status == 500):?> -->
+                <div class='alert' style="background-color: #F08080; height: auto; color: white; text-shadow: none;">
+                  <p><?php echo $msg; ?></p>
+                </div>
+              <!-- <?php endif;?>   -->
+              
               <div>
                 <input type="text" class="form-control" placeholder="Username" name="username"/>
               </div>

@@ -5,7 +5,7 @@ class Home extends CI_Controller {
 
 	function __construct()
 	{
-    	parent::__construct();
+		parent::__construct();
     	$this->load->model('home_model');
 
     	if($this->session->userdata('logged_in') === TRUE)
@@ -13,13 +13,19 @@ class Home extends CI_Controller {
     		$remove_space = str_replace(' ', '', $this->session->userdata('NAMA_ROLE'));
 
       		redirect('Page/'.$remove_space);
-    	}
+		}
+		
   	}
  
 
 	public function index()
-	{
-		$this->load->view('Home/login');
+	{	$status = (isset($_GET['status']) AND trim($_GET['status'])!='')?$_GET['status']:200;
+        $msg = (isset($_GET['msg']) AND trim($_GET['msg'])!='')?base64_decode($_GET['msg']):'';
+		
+		$data['status'] = $status;
+		$data['msg'] = $msg;
+		
+		$this->load->view('Home/login',$data);
 	}
 
 	function auth()
@@ -30,6 +36,9 @@ class Home extends CI_Controller {
 
     	if($validate_user->num_rows() > 0)
 	    {
+			$status = 200;
+			$msg = 'success';
+			
 	        $data_user  = $validate_user->row_array();
 			$username  = $data_user['USERNAME'];
 			$nama_pegawai = $data_user['NAMA_PEGAWAI'];
@@ -50,8 +59,8 @@ class Home extends CI_Controller {
 
 	        $this->session->set_userdata($sesdata);
 
-	        $remove_space = str_replace(' ', '', $user_role);
-
+			$remove_space = str_replace(' ', '', $user_role);
+			
 	        redirect('Page/'.$remove_space);
 
 
@@ -59,9 +68,15 @@ class Home extends CI_Controller {
     	}
     	else
     	{
-			echo $this->session->set_flashdata('msg','Username or Password is Wrong');
-        	redirect('Home');
-    	}
+			$status = 500;
+			$msg = base64_encode('Invalid username or password');
+
+			redirect(base_url().'Home?status='.$status.'&msg='.$msg);
+		}
   	}
 
+	function invalid()
+	{
+		echo "compiled ";
+	}
 }
